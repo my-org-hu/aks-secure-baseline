@@ -7,8 +7,8 @@ Previously you have configured [workload prerequisites](./07-workload-prerequisi
 1. Get the AKS Ingress Controller Managed Identity details.
 
    ```bash
-   export TRAEFIK_USER_ASSIGNED_IDENTITY_RESOURCE_ID=$(az deployment group show --resource-group rg-bu0001a0008 -n cluster-stamp --query properties.outputs.aksIngressControllerPodManagedIdentityResourceId.value -o tsv)
-   export TRAEFIK_USER_ASSIGNED_IDENTITY_CLIENT_ID=$(az deployment group show --resource-group rg-bu0001a0008 -n cluster-stamp --query properties.outputs.aksIngressControllerPodManagedIdentityClientId.value -o tsv)
+   export TRAEFIK_USER_ASSIGNED_IDENTITY_RESOURCE_ID=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.aksIngressControllerPodManagedIdentityResourceId.value -o tsv)
+   export TRAEFIK_USER_ASSIGNED_IDENTITY_CLIENT_ID=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.aksIngressControllerPodManagedIdentityClientId.value -o tsv)
    ```
 
 1. Ensure Flux has created the following namespace.
@@ -52,7 +52,7 @@ Previously you have configured [workload prerequisites](./07-workload-prerequisi
    > Create a `SecretProviderClass` resource with with your Azure Key Vault parameters for the [Azure Key Vault Provider for Secrets Store CSI driver](https://github.com/Azure/secrets-store-csi-driver-provider-azure).
 
    ```bash
-   KEYVAULT_NAME=$(az deployment group show --resource-group rg-bu0001a0008 -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
+   KEYVAULT_NAME=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
 
    cat <<EOF | kubectl create -f -
    apiVersion: secrets-store.csi.x-k8s.io/v1alpha1
@@ -85,7 +85,7 @@ Previously you have configured [workload prerequisites](./07-workload-prerequisi
 
    ```bash
    # Get your ACR cluster name
-   ACR_NAME=$(az deployment group show -g rg-bu0001a0008 -n cluster-stamp --query properties.outputs.containerRegistryName.value -o tsv)
+   ACR_NAME=$(az deployment group show -g $aks -n cluster-stamp --query properties.outputs.containerRegistryName.value -o tsv)
 
    # Import ingress controller image hosted in public container registries
    az acr import --source docker.io/library/traefik:v2.4.8 -n $ACR_NAME
