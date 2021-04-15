@@ -30,6 +30,13 @@ Now that the [hub-spoke network is provisioned](./04-networking.md), the next st
     **Option 1 - Deploy from the command line**
 
    ```bash
+   
+   echo ${RESOURCEID_VNET_CLUSTERSPOKE} 
+   echo ${AADOBJECTID_GROUP_CLUSTERADMIN}
+   echo ${TENANTID_K8SRBAC}
+   echo ${APP_GATEWAY_LISTENER_CERTIFICATE}
+   echo ${AKS_INGRESS_CONTROLLER_CERTIFICATE_BASE64}
+   
    # [This takes about 15 minutes.]
    az deployment group create -g $aks -f cluster-stamp.json -p targetVnetResourceId=${RESOURCEID_VNET_CLUSTERSPOKE} clusterAdminAadGroupObjectId=${AADOBJECTID_GROUP_CLUSTERADMIN} k8sControlPlaneAuthorizationTenantId=${TENANTID_K8SRBAC} appGatewayListenerCertificate=${APP_GATEWAY_LISTENER_CERTIFICATE} aksIngressControllerCertificate=${AKS_INGRESS_CONTROLLER_CERTIFICATE_BASE64}
    ```
