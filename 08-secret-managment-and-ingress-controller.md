@@ -9,6 +9,9 @@ Previously you have configured [workload prerequisites](./07-workload-prerequisi
    ```bash
    export TRAEFIK_USER_ASSIGNED_IDENTITY_RESOURCE_ID=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.aksIngressControllerPodManagedIdentityResourceId.value -o tsv)
    export TRAEFIK_USER_ASSIGNED_IDENTITY_CLIENT_ID=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.aksIngressControllerPodManagedIdentityClientId.value -o tsv)
+   echo $TRAEFIK_USER_ASSIGNED_IDENTITY_RESOURCE_ID
+   echo $TRAEFIK_USER_ASSIGNED_IDENTITY_CLIENT_ID
+   echo $TENANTID_AZURERBAC
    ```
 
 1. Ensure Flux has created the following namespace.
