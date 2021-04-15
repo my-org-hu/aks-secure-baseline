@@ -29,13 +29,13 @@ This is the starting point for the instructions on deploying the [AKS Secure Bas
    > :twisted_rightwards_arrows: If you have forked this reference implementation repo, you'll be able to customize some of the files and commands for a more personalized and production-like experience; ensure references to this git repository mentioned throughout the walkthrough are updated to use your own fork.
 
    ```bash
-   git clone https://github.com/mspnp/aks-secure-baseline.git
+   git clone https://github.com/MTCWestAppDev/aks-secure-baseline.git
    cd aks-secure-baseline
    ```
 
    > :bulb: The steps shown here and elsewhere in the reference implementation use Bash shell commands. On Windows, you can use the [Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl/about#what-is-wsl-2) to run Bash.
 
-1. Ensure [OpenSSL is installed](https://github.com/openssl/openssl#download) in order to generate self-signed certs used in this implementation.
+1. Ensure [OpenSSL is installed](https://github.com/openssl/openssl#download) in order to generate self-signed certs used in this implementation. If you choose to use Azure Cloud Shell, the OpenSSL is already included.
 
 ### Next step
 
