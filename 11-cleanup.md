@@ -18,7 +18,7 @@ After you are done exploring your deployed [AKS secure baseline cluster](./), yo
 
 1. Purge Azure Key Vault
 
-   > Because this reference implementation enables soft delete on Key Vault, execute a purge so your next deployment of this implementation doesn't run into a naming conflict.
+   > If you enable soft delete on Key Vault, execute a purge so your next deployment of this implementation doesn't run into a naming conflict. We disable Soft Delete during the workshop.
 
    ```bash
    az keyvault purge -n $KEYVAULT_NAME
