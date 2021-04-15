@@ -23,6 +23,7 @@ Now that you have the [prerequisites](./01-prerequisites.md) met, follow the ste
 
    ```bash
    export APP_GATEWAY_LISTENER_CERTIFICATE=$(cat appgw.pfx | base64 | tr -d '\n')
+   echo $APP_GATEWAY_LISTENER_CERTIFICATE
    ```
 
 1. Generate the wildcard certificate for the AKS Ingress Controller
@@ -39,6 +40,7 @@ Now that you have the [prerequisites](./01-prerequisites.md) met, follow the ste
 
    ```bash
    export AKS_INGRESS_CONTROLLER_CERTIFICATE_BASE64=$(cat traefik-ingress-internal-aks-ingress-contoso-com-tls.crt | base64 | tr -d '\n')
+   echo $AKS_INGRESS_CONTROLLER_CERTIFICATE_BASE64
    ```
 
 ### Next step
