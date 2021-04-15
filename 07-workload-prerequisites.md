@@ -13,7 +13,8 @@ The AKS Cluster has been enrolled in [GitOps management](./06-gitops.md), wrappi
    > :book: Finally the app team decides to use a wildcard certificate of `*.aks-ingress.contoso.com` for the ingress controller. They use Azure Key Vault to import and manage the lifecycle of this certificate.
 
    ```bash
-   KEYVAULT_NAME=$(az deployment group show --resource-group rg-bu0001a0008 -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
+   KEYVAULT_NAME=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
+   echo $KEYVAULT_NAME
    az keyvault set-policy --certificate-permissions import list get --upn $(az account show --query user.name -o tsv) -n $KEYVAULT_NAME
    ```
 
