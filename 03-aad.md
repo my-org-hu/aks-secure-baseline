@@ -27,6 +27,8 @@ Following the steps below you will result in an Azure AD configuration that will
    ```bash
    az login -t <Replace-With-ClusterApi-AzureAD-TenantId> --allow-no-subscriptions
    TENANTID_K8SRBAC=$(az account show --query tenantId -o tsv)
+   echo $TENANTID_AZURERBAC
+   echo $TENANTID_K8SRBAC
    ```
 
 1. Create/identify the Azure AD security group that is going to map to the [Kubernetes Cluster Admin](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) role `cluster-admin`.
