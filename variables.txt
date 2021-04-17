@@ -1,13 +1,13 @@
 echo "Exporting environment variables"
 
 
-export AADOBJECTNAME_GROUP_CLUSTERADMIN=''
-export AADOBJECTID_GROUP_CLUSTERADMIN=''
-export TENANTID_K8SRBAC=''
-export TENANTID_AZURERBAC=''
-export TENANTDOMAIN_K8SRBAC=''
-export AADOBJECTNAME_USER_CLUSTERADMIN=''
-export AADOBJECTID_USER_CLUSTERADMIN=''
+export AADOBJECTNAME_GROUP_CLUSTERADMIN='please replace with your values'
+export AADOBJECTID_GROUP_CLUSTERADMIN='please replace with your values'
+export TENANTID_K8SRBAC='please replace with your values'
+export TENANTID_AZURERBAC='please replace with your values'
+export TENANTDOMAIN_K8SRBAC='please replace with your values'
+export AADOBJECTNAME_USER_CLUSTERADMIN='please replace with your values'
+export AADOBJECTID_USER_CLUSTERADMIN='please replace with your values'
 
 
 echo $AADOBJECTNAME_GROUP_CLUSTERADMIN
