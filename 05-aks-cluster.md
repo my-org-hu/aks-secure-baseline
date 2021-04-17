@@ -28,7 +28,9 @@ Now that the [hub-spoke network is provisioned](./04-networking.md), the next st
   :exclamation: By default, this deployment will allow unrestricted access to your cluster's API Server.  You can limit access to the API Server to a set of well-known IP addresses (i.,e. a jump box subnet (connected to by Azure Bastion), build agents, or any other networks you'll administer the cluster from) by setting the `clusterAuthorizedIPRanges` parameter in all deployment options.  
 
     **Option 1 - Deploy from the command line**
-
+   
+   Before you try to deploy the AKS resources, please check all parameters have been set correctly.
+   
    ```bash
    
    echo ${RESOURCEID_VNET_CLUSTERSPOKE} 
