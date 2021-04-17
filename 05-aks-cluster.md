@@ -47,7 +47,7 @@ Now that the [hub-spoke network is provisioned](./04-networking.md), the next st
    echo ${APP_GATEWAY_LISTENER_CERTIFICATE}
    echo ${AKS_INGRESS_CONTROLLER_CERTIFICATE_BASE64}
    
-   For other parameters, you can find them in the [`variables.txt` file](./variables.txt).
+   For other parameters, you can find them in [`variables.txt`](./variables.txt) file.
    
    # [This takes about 15 minutes.]
    az deployment group create -g $aks -f cluster-stamp.json -p targetVnetResourceId=${RESOURCEID_VNET_CLUSTERSPOKE} clusterAdminAadGroupObjectId=${AADOBJECTID_GROUP_CLUSTERADMIN} k8sControlPlaneAuthorizationTenantId=${TENANTID_K8SRBAC} appGatewayListenerCertificate=${APP_GATEWAY_LISTENER_CERTIFICATE} aksIngressControllerCertificate=${AKS_INGRESS_CONTROLLER_CERTIFICATE_BASE64}
