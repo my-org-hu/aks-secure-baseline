@@ -72,6 +72,8 @@ Following the steps below you will result in an Azure AD configuration that will
    
    ```
    Now please update the values for those variables in the [`variables.txt` file](./variables.txt):
+   
+   ```bash
    echo "Exporting environment variables"
    export AADOBJECTNAME_GROUP_CLUSTERADMIN=
    export AADOBJECTID_GROUP_CLUSTERADMIN=
