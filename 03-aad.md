@@ -74,16 +74,7 @@ Following the steps below you will result in an Azure AD configuration that will
    echo $AADOBJECTID_USER_CLUSTERADMIN
    
    ```
-   Now please update the values for those variables in the [`variables.txt` file](./variables.txt):
    
-   ```bash
-   echo "Exporting environment variables"
-   export AADOBJECTNAME_GROUP_CLUSTERADMIN=
-   export AADOBJECTID_GROUP_CLUSTERADMIN=
-   export TENANTID_K8SRBAC=
-   export TENANTDOMAIN_K8SRBAC=
-   export AADOBJECTNAME_USER_CLUSTERADMIN=
-   export AADOBJECTID_USER_CLUSTERADMIN=
 
 
 1. Add the cluster admin user(s) to the cluster admin security group.
@@ -95,6 +86,21 @@ Following the steps below you will result in an Azure AD configuration that will
    ```
 
    This object ID will be used later while creating the cluster. This way, once the cluster gets deployed the new group will get the proper Cluster Role bindings in Kubernetes.
+   
+
+
+1. Now please update the values for those variables in the [`variables.txt` file](./variables.txt):
+   
+   ```bash
+   echo "Exporting environment variables"
+   export AADOBJECTNAME_GROUP_CLUSTERADMIN=
+   export AADOBJECTID_GROUP_CLUSTERADMIN=
+   export TENANTID_K8SRBAC=
+   export TENANTDOMAIN_K8SRBAC=
+   export AADOBJECTNAME_USER_CLUSTERADMIN=
+   export AADOBJECTID_USER_CLUSTERADMIN=
+   export TENANTID_AZURERBAC=
+   ```
 
 1. Set up groups to map into other Kubernetes Roles. _Optional, fork required._
 
