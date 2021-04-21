@@ -36,7 +36,8 @@ GitOps allows a team to author Kubernetes manifest files, persist them in their 
    ```bash
    kubectl get nodes
    ```
-
+   You will be promoted to authenticate with the AKS resource. You should use either the account "bu0001a000800-admin" configured in the separate Azure AD tenant or the Azure AD User created by your company for this lab. 
+   
    Once the authentication happens successfully, some new items will be added to your `kubeconfig` file such as an `access-token` with an expiration period. For more information on how this process works in Kubernetes please refer to [the related documentation](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens).
 
 1. Import cluster management images to your container registry.
