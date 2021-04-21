@@ -23,7 +23,7 @@ Following the steps below you will result in an Azure AD configuration that will
    TENANTID_AZURERBAC=$(az account show --query tenantId -o tsv)
    ```
 
-1. Playing the role as the Contoso Bicycle Azure AD team, login into the tenant where Kubernetes Cluster API authorization will be associated with. If you have created a new Azure AD tenant to provide Kubernetes RBAC API, please replace the tenant ID with the informaton you write down when preparing for Prequisites.
+1. Playing the role as the Contoso Bicycle Azure AD team, login into the tenant where Kubernetes Cluster API authorization will be associated with. If you have created a new Azure AD tenant to provide Kubernetes RBAC API, please replace the tenant ID with the informaton you write down when preparing for Prequisites and use the "aksworkshop" user you have configured to log in.
    ```bash
    az login -t <Replace-With-ClusterApi-AzureAD-TenantId> --allow-no-subscriptions
    TENANTID_K8SRBAC=$(az account show --query tenantId -o tsv)
@@ -31,6 +31,7 @@ Following the steps below you will result in an Azure AD configuration that will
    echo $TENANTID_K8SRBAC
    ```
    If you have created a new Azure AD tenant, $TENANTID_AZURERBAC and $TENANTID_K8SRBAC are showing different vaules. 
+   
    If your company have created an Azure AD group in the existing tenant, $TENANTID_AZURERBAC and $TENANTID_K8SRBAC are both set to the value of your company Azure AD tenant ID.
    
 1. Create/identify the Azure AD security group that is going to map to the [Kubernetes Cluster Admin](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) role `cluster-admin`.
