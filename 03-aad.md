@@ -17,7 +17,7 @@ Following the steps below you will result in an Azure AD configuration that will
 
 > :book: The Contoso Bicycle Azure AD team requires all admin access to AKS clusters be security-group based. This applies to the new Secure AKS cluster that is being built for Application ID a0008 under the BU001 business unit. Kubernetes RBAC will be AAD-backed and access granted based on a user's AAD group membership.
 
-1. Query and save your Azure subscription's tenant id. This is the tenant with your Azure subscription to host all resourced to be deployed. If your company has created an Azure AD group for this lab, please run the following query and go to Step 7. You can manually set the variables with the value offered by your company.
+1. Query and save your Azure subscription's tenant id. This is the tenant with your Azure subscription to host all resourced to be deployed. If your company has created an Azure AD group for this lab, please run the following query and go to Step 6. You can manually set the variables with the value offered by your company.
 
    ```bash
    TENANTID_AZURERBAC=$(az account show --query tenantId -o tsv)
