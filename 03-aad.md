@@ -30,7 +30,9 @@ Following the steps below you will result in an Azure AD configuration that will
    echo $TENANTID_AZURERBAC
    echo $TENANTID_K8SRBAC
    ```
-
+   If you have created a new Azure AD tenant, $TENANTID_AZURERBAC and $TENANTID_K8SRBAC are showing different vaules. 
+   If your company have created an Azure AD group in the existing tenant, $TENANTID_AZURERBAC and $TENANTID_K8SRBAC are both set to the value of your company Azure AD tenant ID.
+   
 1. Create/identify the Azure AD security group that is going to map to the [Kubernetes Cluster Admin](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) role `cluster-admin`.
 
    If you already have a security group that is appropriate for your cluster's admin service accounts, use that group and skip this step. If using your own group or your Azure AD administrator created one for you to use; you will need to update the group name throughout the reference implementation.
