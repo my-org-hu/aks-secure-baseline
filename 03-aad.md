@@ -93,13 +93,13 @@ Following the steps below you will result in an Azure AD configuration that will
    Since you have git cloned the repo to your cloud shell, you will update this file there. You can input "Code variables.txt" to edit the file.
    ```bash
    echo "Exporting environment variables"
-   export AADOBJECTNAME_GROUP_CLUSTERADMIN=
-   export AADOBJECTID_GROUP_CLUSTERADMIN=
-   export TENANTID_K8SRBAC=
-   export TENANTDOMAIN_K8SRBAC=
-   export AADOBJECTNAME_USER_CLUSTERADMIN=
-   export AADOBJECTID_USER_CLUSTERADMIN=
-   export TENANTID_AZURERBAC=
+   export AADOBJECTNAME_GROUP_CLUSTERADMIN='please replace with your values'
+   export AADOBJECTID_GROUP_CLUSTERADMIN='please replace with your values'
+   export TENANTID_K8SRBAC='please replace with your values'
+   export TENANTID_AZURERBAC='please replace with your values'
+   export TENANTDOMAIN_K8SRBAC='please replace with your values'
+   export AADOBJECTNAME_USER_CLUSTERADMIN='please replace with your values'
+   export AADOBJECTID_USER_CLUSTERADMIN='please replace with your values'
    ```
 
 1. Set up groups to map into other Kubernetes Roles. _Optional, fork required._
