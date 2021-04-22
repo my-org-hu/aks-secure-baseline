@@ -31,12 +31,12 @@ GitOps allows a team to author Kubernetes manifest files, persist them in their 
    :warning: At this point two important steps are happening:
 
       * The `az aks get-credentials` command will be fetch a `kubeconfig` containing references to the AKS cluster you have created earlier.
-      * To _actually_ use the cluster you will need to authenticate. For that, run any `kubectl` commands which at this stage will prompt you to authenticate against Azure Active Directory. For example, run the following command:
+      * To _actually_ use the cluster you will need to authenticate. For that, run any `kubectl` commands which at this stage will prompt you to authenticate against Azure Active Directory. For example, run the following command: (You will be promoted to authenticate with the AKS resource. You should not use your own account. Instead, please use either the account "bu0001a000800-admin" configured in the separate Azure AD tenant or the Azure AD User created by your company for this lab.)
 
    ```bash
    kubectl get nodes
    ```
-   You will be promoted to authenticate with the AKS resource. You should use either the account "bu0001a000800-admin" configured in the separate Azure AD tenant or the Azure AD User created by your company for this lab. 
+   
    
    Once the authentication happens successfully, some new items will be added to your `kubeconfig` file such as an `access-token` with an expiration period. For more information on how this process works in Kubernetes please refer to [the related documentation](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens).
 
