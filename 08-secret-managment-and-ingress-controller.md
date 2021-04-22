@@ -56,7 +56,7 @@ Previously you have configured [workload prerequisites](./07-workload-prerequisi
    ```bash
    TENANTID_AZURERBAC=$(az account show --query tenantId -o tsv)
    KEYVAULT_NAME=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
-   echo $TENANTID_AZURERBA
+   echo $TENANTID_AZURERBAC
    echo $KEYVAULT_NAME
 
    cat <<EOF | kubectl create -f -
