@@ -12,7 +12,7 @@ GitOps allows a team to author Kubernetes manifest files, persist them in their 
 * the workload's namespace named `a0008`
 
 
-1. Get the cluster name.
+1. Get the cluster name. The variable aks is the resouce group name for the AKS cluster you have deployed. 
 
    ```bash
    echo $aks
