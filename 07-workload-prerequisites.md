@@ -15,7 +15,9 @@ The AKS Cluster has been enrolled in [GitOps management](./06-gitops.md), wrappi
    ```bash
    KEYVAULT_NAME=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
    echo $KEYVAULT_NAME
-   az keyvault set-policy --certificate-permissions import list get --upn $(az account show --query user.name -o tsv) -n $KEYVAULT_NAME
+   USER_NAME=$(az account show --query user.name -o tsv)
+   echo $USER_NAME
+   az keyvault set-policy --certificate-permissions import list get --upn $USER_NAME -n $KEYVAULT_NAME
    ```
 
 1. Import the AKS Ingress Controller's Wildcard Certificate for `*.aks-ingress.contoso.com`.
