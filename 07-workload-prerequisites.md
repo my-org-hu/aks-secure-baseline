@@ -15,11 +15,23 @@ The AKS Cluster has been enrolled in [GitOps management](./06-gitops.md), wrappi
    ```bash
    KEYVAULT_NAME=$(az deployment group show --resource-group $aks -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
    echo $KEYVAULT_NAME
-   USER_NAME=$(az account show --query user.name -o tsv)
-   echo $USER_NAME
-   az keyvault set-policy --certificate-permissions import list get --upn $USER_NAME -n $KEYVAULT_NAME
+   UPN_NAME=$(az account show --query user.name -o tsv)
+   echo $UPN_NAME
    ```
-
+   
+   If you create Azure AD tenant with a personal account, the UPN_NAME may not returned the correct value. Please set the UPN_NAME with the account     
+   manually:
+   
+   ```bash
+   UPN_NAME=<the account you used to create the Azure AD tenant>
+   ```
+   
+   Grant the account the required permissions to import the certificates to Key Vault:
+   
+   ```bash
+   az keyvault set-policy --certificate-permissions import list get --upn $UPN_NAME -n $KEYVAULT_NAME
+   ```
+   
 1. Import the AKS Ingress Controller's Wildcard Certificate for `*.aks-ingress.contoso.com`.
 
    :warning: If you already have access to an appropriate certificate, or can procure one from your organization, consider using it for this step. For more information, please take a look at the [import certificate tutorial using Azure Key Vault](https://docs.microsoft.com/azure/key-vault/certificates/tutorial-import-certificate#import-a-certificate-to-key-vault).
