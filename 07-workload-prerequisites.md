@@ -47,7 +47,7 @@ The AKS Cluster has been enrolled in [GitOps management](./06-gitops.md), wrappi
    > The Azure Key Vault Policy for your user was a temporary policy to allow you to upload the certificate for this walkthrough. In actual deployments, you would manage these access policies via your ARM templates using [Azure RBAC for Key Vault data plane](https://docs.microsoft.com/azure/key-vault/general/secure-your-key-vault#data-plane-and-access-policies).
 
    ```bash
-   az keyvault delete-policy --upn $(az account show --query user.name -o tsv) -n $KEYVAULT_NAME
+   az keyvault delete-policy --upn $UPN_NAME -n $KEYVAULT_NAME
    ```
 
 ## Check Azure Policies are in place
