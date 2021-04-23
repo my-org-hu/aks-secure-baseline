@@ -19,8 +19,7 @@ The AKS Cluster has been enrolled in [GitOps management](./06-gitops.md), wrappi
    echo $UPN_NAME
    ```
    
-   If you create Azure AD tenant with a personal account, the UPN_NAME may not returned the correct value. Please set the UPN_NAME with the account     
-   manually:
+   If you create Azure AD tenant with a personal account, the UPN_NAME may not return the correct value. Please set the UPN_NAME with the account          manually:
    
    ```bash
    UPN_NAME=<the account you used to create the Azure AD tenant>
