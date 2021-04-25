@@ -90,7 +90,8 @@ Following the steps below you will result in an Azure AD configuration that will
 
 
 1. Now please update the values for those variables in the [`variables.txt` file](./variables.txt):
-   Since you have git cloned the repo to your cloud shell, you will update this file there. You can input "Code variables.txt" to edit the file.
+   Since you have git cloned the repo to your cloud shell, you will update this file there. You can input "Code variables.txt" to edit the file.After you    get all variables set correctly, pls copy all commandlines from the variables.txt and run in the cloud shell:
+   
    ```bash
    echo "Exporting environment variables"
    export AADOBJECTNAME_GROUP_CLUSTERADMIN='please replace with your values'
@@ -100,10 +101,8 @@ Following the steps below you will result in an Azure AD configuration that will
    export TENANTDOMAIN_K8SRBAC='please replace with your values'
    export AADOBJECTNAME_USER_CLUSTERADMIN='please replace with your values'
    export AADOBJECTID_USER_CLUSTERADMIN='please replace with your values'
-   ```
-   After you get all variables set correctly, pls copy all commandlines from the variables.txt and run in the cloud shell:
    
-   ```bash
+
    echo $AADOBJECTNAME_GROUP_CLUSTERADMIN
    echo $AADOBJECTID_GROUP_CLUSTERADMIN
    echo $TENANTID_K8SRBAC
