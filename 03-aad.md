@@ -101,7 +101,17 @@ Following the steps below you will result in an Azure AD configuration that will
    export AADOBJECTNAME_USER_CLUSTERADMIN='please replace with your values'
    export AADOBJECTID_USER_CLUSTERADMIN='please replace with your values'
    ```
-
+   After you get all variables set correctly, pls copy all commandlines from the variables.txt and run in the cloud shell:
+   
+   ```bash
+   echo $AADOBJECTNAME_GROUP_CLUSTERADMIN
+   echo $AADOBJECTID_GROUP_CLUSTERADMIN
+   echo $TENANTID_K8SRBAC
+   echo $TENANTID_AZURERBAC
+   echo $TENANTDOMAIN_K8SRBAC
+   echo $AADOBJECTNAME_USER_CLUSTERADMIN
+   echo $AADOBJECTID_USER_CLUSTERADMI
+   ```
 1. Set up groups to map into other Kubernetes Roles. _Optional, fork required._
 
    > :book: The team knows there will be more than just cluster admins that need group-managed access to the cluster. Out of the box, Kubernetes has other roles like _admin_, _edit_, and _view_ which can also be mapped to Azure AD Groups for use both at namespace and at the cluster level.
