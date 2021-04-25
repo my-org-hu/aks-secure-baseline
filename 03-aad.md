@@ -90,7 +90,7 @@ Following the steps below you will result in an Azure AD configuration that will
 
 
 1. Now please update the values for those variables in the [`variables.txt` file](./variables.txt):
-   Since you have git cloned the repo to your cloud shell, you will update this file there. You can input "Code variables.txt" to edit the file.After you    get all variables set correctly, pls copy all commandlines from the variables.txt and run in the cloud shell:
+   Since you have git cloned the repo to your cloud shell, you will update this file there. You can input "Code variables.txt" to edit the file. After you get all variables set correctly, pls copy all commandlines from the variables.txt and run in the cloud shell:
    
    ```bash
    echo "Exporting environment variables"
