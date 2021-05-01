@@ -1,0 +1,5 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: a0009
+  label: testhr
