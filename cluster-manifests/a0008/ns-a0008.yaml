@@ -2,4 +2,5 @@ kind: Namespace
 apiVersion: v1
 metadata:
   name: a0008
-  label: testhr
+  labels: 
+    app1: testhr
